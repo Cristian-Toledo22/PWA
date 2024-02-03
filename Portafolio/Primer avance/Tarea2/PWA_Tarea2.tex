@@ -1,0 +1,313 @@
+% Created 2020-04-24 vie 23:03
+% Intended LaTeX compiler: pdflatex
+\documentclass[12pt,a4paper, twosite]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[left=2.00cm, right=2.50cm, top=2.50cm, bottom=2.00cm]{geometry}
+\usepackage{fancyhdr}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\emph{\uppercase{\leftmark}}}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{1.0pt}
+\pagestyle{fancy}
+\date{}
+\title{}
+\hypersetup{
+ pdfauthor={Toledo Perez Cristian Alejandro},
+ pdftitle={Development and Execution of PWAs},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.2 (Org mode 9.1.9)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\begin{center}
+  \textbf{Nombre:} Toledo Perez Cristian Alejandro \\
+  \textbf{Grupo:} 10B \\
+  \textbf{Materia:} Aplicaciones Web Progresivas \\
+  \textbf{Actividad:} Tarea 2: Development and Execution of PWAs \\
+  \textbf{Docente:} Ray Brunet Parra Galaviz \\
+  \textbf{Fecha:} 10 de enero de 2024
+\end{center}
+
+\newpage
+
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+\label{sec:org60390fa}
+
+Progressive Web Applications (PWAs) revolutionize user 
+experiences by operating seamlessly across devices.
+These applications hinge on fundamental technical 
+elements like web manifest files, HTTPS security, and 
+service worker integration. While PWAs install like native 
+apps, their functionality may vary across devices and browsers.
+This document navigates through PWA essentials: technical requisites, 
+installation processes, compatibility considerations, and crucial 
+development tools.
+
+\subsection{Purpose}
+\label{sec:org434c3ef}
+
+This document aims to provide a comprehensive understanding 
+of Progressive Web Applications (PWAs), focusing on their 
+technical requirements, installation procedures, compatibility 
+nuances, and the essential tools required for their successful 
+development. By exploring these facets, the aim is to equip developers 
+and stakeholders with the knowledge necessary to leverage the potential
+of PWAs in delivering seamless and engaging user experiences across 
+diverse platforms and devices
+
+
+\subsection{System Scope}
+\label{sec:org12e44a1}
+
+
+This document encompasses a detailed exploration 
+of Progressive Web Applications (PWAs), delving 
+into their technical architecture, installation 
+mechanisms, compatibility considerations, and a curated 
+selection of pivotal tools and technologies. The scope includes 
+understanding the foundational aspects of PWAs and their practical 
+implementation across various platforms and devices, aiming to assist 
+developers and stakeholders in harnessing the potential of these 
+applications for seamless and versatile user experiences.
+
+
+\subsection{Definitions, Acronyms, and Abbreviations}
+\label{sec:orgb158e36}
+
+In this document, the following terms, acronyms, and abbreviations are utilized:
+
+\begin{itemize}
+
+\item \textbf{PWA}: Progressive Web Application. Web applications employing modern web capabilities to offer a native-like user experience.
+
+\item \textbf{Web Manifest:} A JSON file providing metadata to the browser about the application, enabling features like 'Add to Homescreen.'
+
+\item \textbf{HTTPS: }HyperText Transfer Protocol Secure. A protocol ensuring secure communication between the user's browser and the web server.
+
+\item \textbf{Service Worker: }A script running in the background, facilitating event-driven functionalities and offline capabilities for PWAs.
+
+\item \textbf{Application Shell: }A foundational structure of a PWA, providing essential UI elements using HTML and CSS, enhancing user experience.
+
+\item Compatibility: The ability of a PWA to function optimally across various browsers and operating systems.
+
+\end{itemize}
+Polymer, Webpack Module Bundler, Magento PWA Studio, ScandiPWA, PWA Builder, Ionic, Angular, React PWA Library, VueJS, LightHouse: Various tools and technologies leveraged in the development and optimization of PWAs.
+
+These definitions, acronyms, and abbreviations are crucial for understanding and discussing the components and requirements integral to Progressive Web Applications throughout this document.
+
+\subsection{References}
+\label{sec:org62711e0}
+
+
+\begin{thebibliography}{9}
+
+  \bibitem{love2003}
+  Love, C. (2003, February 7). Progressive web application development by example. O’Reilly Online Learning. Retrieved January 9, 2024, from \url{https://www.oreilly.com/library/view/progressive-web-application/9781787125421/e89ac7bb-8251-41ed-ad3f-6ed793a73b9d.xhtml}
+  
+  \bibitem{mdn}
+  MDN Web Docs. (2023, November 17). How to make PWAs installable - Progressive Web Apps. Retrieved January 9, 2024, from \url{https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Tutorials/js13kGames/Installable_PWAs}
+  
+  \bibitem{herrera2023}
+  Herrera, I., Herrera, I. (2023, July 27). Compatibilidades de las PWA según el navegador y el sistema operativo. ttandem.com. Retrieved January 9, 2024, from \url{https://www.ttandem.com/blog/desarrollo-que-son-las-pwa-o-progressive-web-applications/compatibilidades-de-las-pwa-segun-el-navegador-y-el-sistema-operativo/}
+  
+  \bibitem{raghavan2022}
+  Raghavan, R. (2022, February 18). Best 10 Tools to leverage for Progressive Web App Development. Codemotion Magazine. Retrieved January 9, 2024, from \url{https://www.codemotion.com/magazine/frontend/web-developer/best-10-tools-to-leverage-for-progressive-web-app-development/#:~:text=React%20PWA%20Library,-The%20ReactJS%20framework&text=ReactJS%2C%20as%20one%20of%20the,ideal%20solution%20for%20building%20PWAs}
+  
+\end{thebibliography}
+
+
+\subsection{Overview of the Document}
+\label{sec:orgdaca22c}
+
+This document serves as a comprehensive guide to Progressive Web Applications 
+(PWAs), outlining their essential technical requirements, installation procedures, 
+compatibility considerations, and the key tools and technologies pivotal for successful
+development. It begins by elucidating the fundamental requisites for PWAs, emphasizing 
+the significance of web manifest files, HTTPS security, and service worker integration. 
+The document then delves into the installation process of PWAs, elucidating how supporting
+browsers prompt users for installation. Furthermore, it discusses the adaptability of PWAs
+across various browsers and operating systems, emphasizing their evolving compatibility 
+landscape. Additionally, the document offers insight into ten influential tools and technologies
+deemed imperative for leveraging PWA development effectively, encompassing frameworks like Polymer,
+Magento PWA Studio, and Ionic, among others. Overall, this document aims to equip developers and 
+stakeholders with a comprehensive understanding of PWAs, facilitating their seamless integration 
+and harnessing their potential for delivering superior user experiences.
+
+\newpage
+
+\section{General Description of the Document}
+\label{sec:orgc1c4017}
+
+The document will cover essential aspects 
+such as the technical foundations of Progressive 
+Web Applications (PWAs), their functionalities, 
+user adaptability, constraints posed by varying 
+platforms, assumptions, dependencies, and future 
+improvements. By dissecting these elements, it aims 
+to offer a holistic view of PWAs and their requisites 
+for a comprehensive understanding.
+
+
+\subsection{Product Perspective}
+\label{sec:org24980a8}
+
+A Progressive Web Application (PWA) requires essential technical components for its functionality:
+\begin{itemize}
+
+\item  \textbf{Web Manifest File: }Provides metadata to the browser, enabling features like 'Add to Homescreen.'
+\item \textbf{HTTPS Security: }Ensures secure communication between the user's browser and the web server.
+\item \textbf{Service Worker Integration: }Facilitates event-driven functionalities and offline capabilities for PWAs.
+\item \textbf{Application Shell or Common HTML/CSS: }Enhances user experience by providing essential UI elements.
+
+\end{itemize}
+
+\subsection{Product Functions}
+\label{sec:orgaf51da6}
+
+The functions and capabilities of a PWA include:
+\begin{itemize}
+
+\item \textbf{Installation: }Supporting browsers can prompt users to install the PWA, functioning similarly to native apps.
+\item \textbf{Compatibility: }PWAs adapt to various browsers and operating systems, offering optimal user experiences.
+\item \textbf{Device-Specific Functionality: }The functionalities of a PWA may vary depending on device and browser compatibility.
+
+\end{itemize}
+
+\subsection{User Characteristics}
+\label{sec:orga40b0ee}
+
+Users can install and use PWAs across different devices and browsers. Initially available on Android, PWAs have expanded to iOS and Windows with certain limitations.
+
+
+\subsection{Constraints}
+\label{sec:org5ca5790}
+
+Not all browsers and operating systems provide the same level of compatibility with PWAs. The functionalities of PWAs might be limited based on the device and browser being used.
+
+\subsection{Assumptions and Dependencies}
+\label{sec:org0ae23fe}
+
+Changes in the organizational structure or technical details 
+(like the system's operating system) might necessitate a 
+review and modification of the PWA's requirements.
+
+\subsection{Future Requirements}
+\label{sec:org33cfcdb}
+
+\begin{itemize}
+\item Enhancements in cross-platform compatibility to broaden accessibility to additional operating systems.
+\item Integration of emerging technologies to enhance the functionality and performance of the PWA.
+\item Implementation of new features and characteristics to improve user experience and overall usability  
+\end{itemize}
+
+\newpage
+
+\section{Specific Requirements}
+\label{sec:org40573d1}
+
+This section outlines the technical and functional 
+requirements necessary for the development and operation 
+of the Progressive Web App (PWA). The requirements focus 
+on aspects such as external interfaces, key system functions, 
+expected performance, design constraints, system attributes, 
+and other relevant factors essential to ensure the effectiveness, 
+security, and usability of the PWA. The following details these requirements in depth:
+
+
+\subsection{External Interfaces}
+\label{sec:orgfd5391f}
+
+This section will describe requirements affecting user interfaces, interactions with other systems (hardware/software), and communication interfaces.
+\begin{itemize}
+  \item \textbf{Web Manifest File: }The system shall provide a web manifest file to enable features like 'Add to Homescreen'.
+  \item \textbf{HTTPS Security: }All communications between the user's browser and the web server shall be served securely using HTTPS.
+  \item \textbf{Service Worker Integration: }The system must register a service worker with a fetch event handler for event-driven functionalities and offline capabilities.
+\end{itemize}
+
+\subsection{Functions}
+\label{sec:org307bb59}
+
+This subsection will specify all system actions or functions.
+\begin{itemize}
+  \item \textbf{Installation: }Supporting browsers should prompt users to install the PWA, functioning similarly to native apps.
+  \item \textbf{Compatibility: }The system should adapt to various browsers and operating systems, offering optimal user experiences.
+  \item \textbf{Device-Specific Functionality: }Functionality may vary based on device and browser compatibility.
+\end{itemize}
+
+\subsection{Performance Requirements}
+\label{sec:org94bc543}
+
+This section will detail the expected system load and data requirements.
+
+\begin{itemize}
+  \item \textbf{User Load Expectations: }The system should handle a simultaneous user load of at least [X number] users without significant performance degradation, ensuring a smooth user experience during peak hours.
+  \item \textbf{Response Time: }The PWA must respond to user interactions within [Y seconds] for critical functionalities (like navigation, form submissions) to maintain user engagement and satisfaction.
+  \item \textbf{Data Throughput: }The system should support a data throughput of [Z units] per second to manage incoming and outgoing data, ensuring seamless communication between the client and the server.
+  \item \textbf{Cache Utilization: }The PWA should effectively utilize caching mechanisms to optimize load times for subsequent visits and ensure efficient offline access.
+\end{itemize}
+
+These requirements outline performance benchmarks essential for the system to deliver a responsive, reliable, and efficient user experience. Adjust the values ([X], [Y], [Z]) based on your project's specific needs and performance goals.
+
+\subsection{Design Constraints}
+\label{sec:org49fe900}
+
+Hardware Limitations: The system design should accommodate low-end devices commonly used by entry-level users, ensuring the PWA's functionality and performance on devices with limited processing power and memory.
+Standards Compliance: The system design must adhere to web standards, ensuring compatibility with various browsers and ensuring compliance with industry-standard security protocols such as TLS 1.2/1.3 for HTTPS implementation.
+
+
+\subsection{System Attributes}
+\label{sec:orgd0babc0}
+
+\begin{itemize}
+  \item \textbf{Security: }The system must employ robust security measures, including user authentication through secure login credentials, and data encryption for sensitive user information.
+  \item \textbf{Reliability: }The system should have a minimum uptime of 99%, ensuring availability for users, and incorporate automated backup mechanisms to prevent data loss in case of system failures. 
+\end{itemize}
+
+
+\subsection{Other Requirements}
+\label{sec:org31d2978}
+\begin{itemize}
+  \item \textbf{Accessibility: }The system should comply with WCAG 2.1 guidelines to ensure accessibility for users with disabilities, incorporating features like screen reader compatibility and keyboard navigation.
+  \item \textbf{Legal Compliance: }The PWA must comply with data protection laws such as GDPR or CCPA, ensuring user data privacy, and provide mechanisms for users to manage their data and consent preferences.  
+\end{itemize}
+
+\newpage
+
+
+\section{Appendices}
+\label{sec:org75cea03}
+
+
+Your PWA is progressive. It will always deliver the best possible 
+experience given the capabilities of the browser it's running on. 
+The more modern the browser is, the better the experience.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{pwaBrowser.png}
+  \caption{Browser Support \& Compatibility}
+  \label{fig:browser_support}
+\end{figure}
+
+
+\end{document}
