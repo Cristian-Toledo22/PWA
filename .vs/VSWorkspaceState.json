@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Portafolio",
+    "\\Examenes",
+    "\\Examenes\\Examen 2",
+    "\\Examenes\\Examen 2\\css",
+    "\\Examenes\\Examen 2\\js",
     "\\Portafolio\\Segundo avance"
   ],
+  "SelectedNode": "\\Examenes\\Examen 2\\js\\functions.js",
   "PreviewInSolutionExplorer": false
 }
